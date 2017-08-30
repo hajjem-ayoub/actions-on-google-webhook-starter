@@ -17,7 +17,13 @@ const simpleTextAction = (app) => {
 const customPayloadAction = (app) => {
   app.response_.send(
     { 
-      "speech": "Hello from custom text action"
+      "speech": "Hello from custom text action",
+      // "followupEvent": {
+      //   "name": "event-custom",
+      //   "data": {
+      //      "param":"my-value"
+      //   }
+      // }
     }
   );
 };
