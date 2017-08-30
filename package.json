@@ -3,8 +3,17 @@
   "version": "0.0.0",
   "description": "actions-on-google-webhook-starter",
   "main": "index.js",
+  "engines": {
+    "node": "~4.2"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "actions-on-google": "^1.2.1",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
   },
   "repository": {
     "type": "git",
