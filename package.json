@@ -1,0 +1,25 @@
+{
+  "name": "actions-on-google-webhook-starter",
+  "version": "0.0.0",
+  "description": "actions-on-google-webhook-starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hajjem-ayoub/actions-on-google-webhook-starter.git"
+  },
+  "keywords": [
+    "actions-on-google",
+    "google-assistant",
+    "fulfillment",
+    "api.ai"
+  ],
+  "author": "hajjem.ayoub@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hajjem-ayoub/actions-on-google-webhook-starter/issues"
+  },
+  "homepage": "https://github.com/hajjem-ayoub/actions-on-google-webhook-starter#readme"
+}
