@@ -8,6 +8,7 @@ exports.requestHandler = (request, response) => {
   actionMap.set('action.simple-text', simpleTextAction);
   actionMap.set('action.custom-payload', customPayloadAction);
   actionMap.set('action.simple-rich-response', simpleRichResponseAction);
+  actionMap.set('action.say-ssml', saySSMLAction); //SSML: Speech Synthesis Markup Language 
   app.handleRequest(actionMap);
 };
 
@@ -24,6 +25,21 @@ const simpleRichResponseAction = (app) => {
       .setImage(`${DOMAIN_URL}/pizza_card.jpg`, 'Image alternate text')
     )
   );
+};
+
+const saySSMLAction = (app) => {
+  let text_to_speech = '<speak>'
+    + 'Here are abreviations <say-as interpret-as="characters">IOT</say-as> samples. '
+    + 'I can pause for 3 sec <break time="3" />. '
+    + `I can play a sound <audio src="${DOMAIN_URL}/cow.mp3">could not read mp3</audio>. `
+    + 'I can speak in cardinals. Your position is <say-as interpret-as="cardinal">10</say-as> in line. '
+    + 'Or I can speak in ordinals. You are <say-as interpret-as="ordinal">10</say-as> in line. '
+    + 'Or I can even speak in digits. Your position in line is <say-as interpret-as="digits">10</say-as>. '
+    + 'I can also substitute phrases, like the <sub alias="World Wide Web Consortium">W3C</sub>. '
+    + 'Finally, I can speak a paragraph with two sentences. '
+    + '<p><s>This is sentence one.</s><s>This is sentence two.</s></p>'
+    + '</speak>'
+  app.tell(text_to_speech);
 };
 
 const simpleTextAction = (app) => {
