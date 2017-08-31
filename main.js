@@ -7,9 +7,24 @@ exports.requestHandler = (request, response) => {
   //TODO change action.simple-text with the actions name you specified in API.ai
   actionMap.set('action.simple-text', simpleTextAction);
   actionMap.set('action.custom-payload', customPayloadAction);
+  actionMap.set('action.surface-capability', surfaceCapabilityAction);
   actionMap.set('action.simple-rich-response', simpleRichResponseAction);
   actionMap.set('action.say-ssml', saySSMLAction); //SSML: Speech Synthesis Markup Language 
   app.handleRequest(actionMap);
+};
+
+const surfaceCapabilityAction = (app) => {
+  let hasScreen =
+    app.hasSurfaceCapability(app.SurfaceCapabilities.SCREEN_OUTPUT);
+  let hasAudio =
+    app.hasSurfaceCapability(app.SurfaceCapabilities.AUDIO_OUTPUT);
+  if (hasScreen && hasAudio){
+    app.ask('this is a response for screen and audio devices');
+  } else if (hasScreen){
+    app.ask('this is a response for no audio devices');
+  } else {
+    app.ask('this is a response for no screen devices');
+  }
 };
 
 const simpleRichResponseAction = (app) => {
